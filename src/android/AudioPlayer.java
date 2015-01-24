@@ -18,7 +18,7 @@
        
        package org.apache.cordova.media;
 */
-package org.apache.cordova.media;
+package com.myendoftheweb.media;
 
 import android.media.AudioManager;
 import android.media.MediaPlayer;
