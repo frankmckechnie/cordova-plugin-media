@@ -142,15 +142,17 @@ public class AudioPlayer implements OnCompletionListener, OnPreparedListener, On
             this.audioFile = file;
             this.recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
             
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.GINGERBREAD_MR1) {
+            if (Build.VERSION.SDK_INT >= 10) {
               this.recorder.setAudioSamplingRate(44100);
               this.recorder.setAudioEncodingBitRate(96000);
               this.recorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
               this.recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
             }
             else{
-              this.recorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT); // THREE_GPP);
-              this.recorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT); //AMR_NB);
+              this.recorder.setAudioSamplingRate(8000);
+              this.recorder.setAudioEncodingBitRate(12200);
+		this.recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+              this.recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
             }
             
             this.recorder.setOutputFile(this.tempFile);
