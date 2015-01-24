@@ -18,7 +18,7 @@
        
        package org.apache.cordova.media;
 */
-package com.myendoftheweb.media
+package com.myendoftheweb.media;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
